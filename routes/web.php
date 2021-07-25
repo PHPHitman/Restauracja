@@ -13,10 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\MenuController::class, 'index'])->name('menu.index');
+Route::get('/edit', [App\Http\Controllers\MenuController::class, 'edit'])->name('menu.edit');
+Route::get('/create', [App\Http\Controllers\MenuController::class, 'create'])->name('menu.create');
+Route::get('/edit/{id}', [App\Http\Controllers\MenuController::class, 'editProduct'])->name('menu.editProduct');
+Route::post('/store', [App\Http\Controllers\MenuController::class, 'store'])->name('menu.store');
+Route::get('/delete/{id}', [App\Http\Controllers\MenuController::class, 'delete'])->name('menu.delete');
+Route::get('/recommended/add/{id}', [App\Http\Controllers\MenuController::class, 'addRecommended'])->name('menu.addRecommended');
+Route::get('/recommended/delete/{id}', [App\Http\Controllers\MenuController::class, 'deleteRecommended'])->name('menu.deleteRecommended');
+
+

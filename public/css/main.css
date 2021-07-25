@@ -1,0 +1,27 @@
+.card {
+  height: 100%;
+  border: 1px solid #00ca56 !important;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px !important;
+}
+
+.card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Do not scale the image */
+  -o-object-position: center;
+     object-position: center;
+  /* Center the image within the element */
+  height: 220px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.card a {
+  margin: 5px;
+}
+
+.addNew {
+  margin-bottom: 30px;
+}
