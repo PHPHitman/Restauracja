@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     /**
@@ -21,10 +23,27 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+
+        public function index()
     {
-        return view('home');
+        $categories = Category::all();
+        $food = Product::where('category_id', 1)->get();
+        $drinks = Product::where('category_id', 2)->get();
+        $desserts = Product::where('category_id', 3)->get();
+        $alcohols = Product::where('category_id', 4)->get();
+        $recommended = Product::where('recommended', 1)->get();
+
+        return view('menu.index',[
+            'categories' => $categories,
+            'food' => $food,
+            'drinks' => $drinks,
+            'desserts' => $desserts,
+            'alcohols' => $alcohols,
+            'recommended' => $recommended
+        ]);
+
     }
+
 
 
 }

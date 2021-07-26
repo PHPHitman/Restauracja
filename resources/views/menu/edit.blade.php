@@ -32,7 +32,7 @@
                     </div>
 
                 @if( !$recommended->isEmpty() )
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center pt-4">
                         <h4>Polecane</h4>
                     </div>
                     <div class="row justify-content-center">
@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="text-center">
                                         <a class="btn btn-danger" role="button" href="/delete/{{$product->id}}">Usuń</a>
-                                        <button type="button" class="btn btn-info">Edytuj</button>
+                                        <a class="btn btn-info" role="button" href="/edit/{{$product->id}}">Edytuj</a>
                                         <a class="btn btn-warning" role="button" href="recommended/delete/{{$product->id}}">Usuń z polecanych</a>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                 @endif
 
                 @if( !$food->isEmpty() )
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center pt-4">
                         <h4>Dania</h4>
                     </div>
                     <div class="row justify-content-center">
@@ -77,8 +77,8 @@
                                     </div>
                                     <div class="text-center">
                                         <a class="btn btn-danger" role="button" href="/delete/{{$product->id}}">Usuń</a>
-                                        <button type="button" class="btn btn-info">Edytuj</button>
-                                        <button type="button" class="btn btn-success" >Dodaj do polecanych</button>
+                                        <a class="btn btn-info" role="button" href="/edit/{{$product->id}}">Edytuj</a>
+                                        <a class="btn btn-success" role="button" href="/recommended/add/{{$product->id}}">Dodaj do polecanych</a>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                     </div>
                 @endif
                 @if( !$drinks->isEmpty() )
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center pt-4">
                         <h4>Napoje</h4>
                     </div>
                     <div class="row justify-content-center">
@@ -103,8 +103,8 @@
                                     </div>
                                     <div class="text-center">
                                         <a class="btn btn-danger" role="button" href="/delete/{{$product->id}}">Usuń</a>
-                                        <button type="button" class="btn btn-info">Edytuj</button>
-                                        <button type="button" class="btn btn-success" >Dodaj do polecanych</button>
+                                        <a class="btn btn-info" role="button" href="/edit/{{$product->id}}">Edytuj</a>
+                                        <a class="btn btn-success" role="button" href="/recommended/add/{{$product->id}}">Dodaj do polecanych</a>
                                     </div>
                                 </div>
                                 <div>
@@ -116,7 +116,7 @@
                     </div>
                 @endif
                 @if( !$desserts->isEmpty() )
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center pt-4">
                         <h4>Desery</h4>
                     </div>
                     <div class="row justify-content-center">
@@ -133,8 +133,8 @@
                                     </div>
                                     <div class="text-center">
                                         <a class="btn btn-danger" role="button" href="/delete/{{$product->id}}">Usuń</a>
-                                        <button type="button" class="btn btn-info">Edytuj</button>
-                                        <button type="button" class="btn btn-success" >Dodaj do polecanych</button>
+                                        <a class="btn btn-info" role="button" href="/edit/{{$product->id}}">Edytuj</a>
+                                        <a class="btn btn-success" role="button" href="/recommended/add/{{$product->id}}">Dodaj do polecanych</a>
                                     </div>
                                 </div>
 

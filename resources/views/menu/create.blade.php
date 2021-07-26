@@ -26,7 +26,7 @@
                         @if(!isset($product->id))
                             <option selected disabled>Wybierz kategorię</option>
                             @foreach($categories as $category)
-                                <option value="{{$category->id}}">{{$category->name}}" </option>
+                                <option value="{{$category->id}}">{{$category->name}} </option>
                             @endforeach
                             @else
                             <option disabled>Wybierz kategorię</option>

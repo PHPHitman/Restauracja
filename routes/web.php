@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\MenuController::class, 'index'])->name('menu.index');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 Route::get('/edit', [App\Http\Controllers\MenuController::class, 'edit'])->name('menu.edit');
 Route::get('/create', [App\Http\Controllers\MenuController::class, 'create'])->name('menu.create');
 Route::get('/edit/{id}', [App\Http\Controllers\MenuController::class, 'editProduct'])->name('menu.editProduct');

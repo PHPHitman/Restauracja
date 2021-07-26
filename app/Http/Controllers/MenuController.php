@@ -14,25 +14,25 @@ class MenuController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
-    {
-        $categories = Category::all();
-        $food = Product::where('category_id', 1)->get();
-        $drinks = Product::where('category_id', 2)->get();
-        $desserts = Product::where('category_id', 3)->get();
-        $alcohols = Product::where('category_id', 4)->get();
-        $recommended = Product::where('recommended', 1)->get();
-
-        return view('menu.index',[
-            'categories' => $categories,
-            'food' => $food,
-            'drinks' => $drinks,
-            'desserts' => $desserts,
-            'alcohols' => $alcohols,
-            'recommended' => $recommended
-        ]);
-
-    }
+//    public function index()
+//    {
+//        $categories = Category::all();
+//        $food = Product::where('category_id', 1)->get();
+//        $drinks = Product::where('category_id', 2)->get();
+//        $desserts = Product::where('category_id', 3)->get();
+//        $alcohols = Product::where('category_id', 4)->get();
+//        $recommended = Product::where('recommended', 1)->get();
+//
+//        return view('menu.index',[
+//            'categories' => $categories,
+//            'food' => $food,
+//            'drinks' => $drinks,
+//            'desserts' => $desserts,
+//            'alcohols' => $alcohols,
+//            'recommended' => $recommended
+//        ]);
+//
+//    }
 
     public function edit()
     {
@@ -78,7 +78,7 @@ class MenuController extends Controller
 
     public function store()
     {
-        //Walidacja danycg=h
+        //Walidacja danych
         $data=request()->validate([
             'name' => 'required',
             'category_id' => 'required',
@@ -86,14 +86,10 @@ class MenuController extends Controller
             'image' => ['required','image']
         ]);
 
-
         $imagePath=request('image')->store('uploads','public');
         $data['image']=$imagePath;
-        $x ='adadad';
-
         Product::create($data);
         return redirect('/edit')->with('added', 'Produkt został dodany!');;
-
     }
 
     public function delete($id)
@@ -107,7 +103,6 @@ class MenuController extends Controller
     {
         Product::where('id',$id)
             ->update(array('recommended' => 1));
-
         return redirect('/edit')->with('recommend', 'Produkt został dodany do rekomendowanych!');
     }
 

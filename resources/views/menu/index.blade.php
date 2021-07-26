@@ -5,10 +5,10 @@
 
 
         @if( !$recommended->isEmpty() )
-        <div class="row justify-content-center">
+        <div class="row justify-content-center pt-4">
             <h2>Polecane</h2>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center ">
 
             @foreach($recommended as $product)
                 <div class="col-md-3">
@@ -27,7 +27,7 @@
         @endif
 
             @if( !$food->isEmpty() )
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pt-4">
                 <h2>Dania</h2>
             </div>
             <div class="row justify-content-center">
@@ -48,7 +48,7 @@
             </div>
             @endif
             @if( !$drinks->isEmpty() )
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pt-4">
                 <h2>Napoje</h2>
             </div>
             <div class="row justify-content-center">
@@ -69,7 +69,7 @@
             </div>
             @endif
             @if( !$desserts->isEmpty() )
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pt-4">
                 <h2>Desery</h2>
             </div>
             <div class="row justify-content-center">
